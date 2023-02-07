@@ -1,0 +1,27 @@
+.product{
+    height: 400px;
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    
+
+
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+.products{
+    height: 500px;
+    width: 400px;
+    margin: 40px;
+    background-color: azure;
+    height: 550;
+    border: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
