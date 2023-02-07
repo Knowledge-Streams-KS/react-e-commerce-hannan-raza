@@ -6,22 +6,36 @@ import Card from "../../Components/Card/Card";
 
 const Products = (props) => {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState([])
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products")
     .then(Response => {
-      const res = Response.data
-      setProducts(res);
+      const resp = Response.data
+      setProducts(resp);
+      setSearch(resp);
       
     });
     }, []);
+
+    const handleSearch = (event) =>{
+      const input = event.target.value;
+      const search = products.filter((param) =>{
+        return param.title.toLowerCase().includes(input.toLowerCase());
+      })
+      setSearch(search);
+    }
   return (
     <div>
       <div>
-  {console.log(products)}
+      <input placeholder="Search" onChange={handleSearch}></input>
+      </div>
+      <div>
+
+  
   <h1>Hello</h1>
   <ul>
-  {products.map((param,index) => (
+  {search.map((param,index) => (
     // <li key={products.id}>{products.title}{products.price}
     // </li>
     <Card
