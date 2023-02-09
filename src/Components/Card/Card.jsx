@@ -1,21 +1,21 @@
-import React from "react";
-import './Card.css'
-
+// import React from "react";
+import "./Card.css";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  
+  {
+  }
+  return (
+    <div className="product">
+      <div className="products">
+        <Link to={`/productDetails/${props.id}`}>{props.title}</Link>
 
-
-return (
-  <div className="product">
-    <div className="products">
-    <h1>{props.title}</h1>
-    <h1>{props.price}</h1>
-    {/* <h1>{props.description}</h1> */}
-    <img src={props.image}/>
+        <h1>${props.price}</h1>
+        {/* <h1>{props.description}</h1> */}
+        <img src={props.image} alt="" />
+      </div>
     </div>
-   </div>
-  )
+  );
 };
 
 export default Card;
