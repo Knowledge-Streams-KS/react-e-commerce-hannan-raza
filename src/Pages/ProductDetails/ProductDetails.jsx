@@ -7,14 +7,32 @@ const ProductDetails = () => {
   const { id } = useParams();
   console.log(id);
 
+  // const [productDetails, setProductDetails] = useState([]);
+  // useEffect(() => {
+  //   axios.get(`https://fakestoreapi.com/products/${id}`).then((Response) => {
+  //     const resp = Response.data;
+  //     setProductDetails(resp);
+  //     console.log(productDetails);
+  //   });
+  // }, []);
+
   const [productDetails, setProductDetails] = useState([]);
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((Response) => {
-      const resp = Response.data;
-      setProductDetails(resp);
-      console.log(productDetails);
-    });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://fakestoreapi.com/products/${id}`
+        );
+        const resp = response.data;
+        setProductDetails(resp);
+        console.log(productDetails);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
   }, []);
+
   return (
     <div>
       <h1>Product Details</h1>

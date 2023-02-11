@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+}
+
+.heading {
+}
+
+.links {
+}

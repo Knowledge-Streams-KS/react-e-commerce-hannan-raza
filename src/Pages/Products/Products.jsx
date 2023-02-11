@@ -56,18 +56,26 @@ const Products = () => {
     setSearch(sortedProducts);
   };
 
+  const handleReverseOrder = () => {
+    let sortedProducts = [...products].sort((p1, p2) =>
+      p1.title < p2.title ? 1 : p1.title > p2.title ? -1 : 0
+    );
+    setSearch(sortedProducts);
+  };
+
   return (
     <div>
       <div>
         <button onClick={handleMaxSort}>MIN To MAX</button>
         <button onClick={handleMinSort}>MAX To MIN</button>
         <button onClick={handleAlphabeticOrder}>ALPHABETICS</button>
+        <button onClick={handleReverseOrder}>ReverseALPHABETICS</button>
       </div>
       <div>
         <input placeholder="Search" onChange={handleSearch}></input>
       </div>
       <div>
-        <h1>Hello</h1>
+        <h1>HelloHellp</h1>
         <ul>
           {search.map((param, index) => (
             // <li key={products.id}>{products.title}{products.price}
