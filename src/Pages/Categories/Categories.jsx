@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./Categories.css";
 
 const Categories = () => {
   const [category, setCategory] = useState([]);
@@ -15,15 +16,19 @@ const Categories = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1>Categories</h1>
 
       {category.map((param, index) => (
         <li>
-          <Link to={`/products/${param}`}>{param}</Link>
+          <Link to={`/products/${param}`}>
+            <button className="buttonCategory">{param}</button>
+          </Link>
         </li>
       ))}
-      <Link to="/">Home Page</Link>
+      <Link to="/">
+        <button className="buttonHomeCategory">Home Page</button>
+      </Link>
     </div>
   );
 };

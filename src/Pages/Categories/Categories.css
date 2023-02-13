@@ -1,0 +1,47 @@
+.container {
+  background-image: url("./1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.buttonCategory {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.buttonCategory:hover {
+  background-color: purple;
+}
+
+.buttonHomeCategory {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.buttonHomeCategory:hover {
+  background-color: green;
+}

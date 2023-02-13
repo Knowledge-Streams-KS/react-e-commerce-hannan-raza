@@ -1,15 +1,20 @@
 import React from "react";
+import "./Home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <br></br>
-      <Link to="/categories">Categories</Link>
-      <br></br>
-      <br></br>
-      <Link to="/products">Products</Link>
+    <div className="container">
+      <h1>E-Store</h1>
+      <p>The largest E-Store of Pakistan.</p>
+
+      <Link to="/categories">
+        <button className="buttonHome">Categories</button>
+      </Link>
+
+      <Link to="/products">
+        <button className="buttonHome">Products</button>
+      </Link>
     </div>
   );
 };

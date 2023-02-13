@@ -11,13 +11,17 @@ import Cart from "./Pages/Cart/Cart";
 import OrderCompleted from "./Pages/OrderCompleted/OrderCompleted";
 import UserDetailForm from "./Pages/UserDetailForm/UserDetailForm";
 import ConfirmedOrder from "./Pages/ConfirmedOrder/ConfirmedOrder";
+import Login from "./Pages/Registration/Login";
+import Signup from "./Pages/Registration/Signup";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<NavBar />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/products/:id?" element={<Products />} />
           <Route path="/productDetails/:id?" element={<ProductDetails />} />

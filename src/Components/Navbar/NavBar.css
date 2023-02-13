@@ -4,7 +4,12 @@
   background-color: black;
   color: white;
   position: fixed;
+
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 1; /* increase the z-index to bring it to the front */
+  /* other styles for the navbar */
 }
 
 .heading {

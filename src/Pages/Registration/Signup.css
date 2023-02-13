@@ -1,0 +1,37 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: brown;
+}
+
+.formSignup {
+  margin-bottom: 1rem;
+}
+
+.labelSignup {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input,
+.buttonSignup {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttonSignup {
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.buttonSignup:hover {
+  background-color: green;
+}
