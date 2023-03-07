@@ -1,40 +1,64 @@
-import Products from "./Pages/Products/Products";
-import Home from "./Pages/Home/Home";
-import Categories from "./Pages/Categories/Categories";
+import AppRoutes from "./AppRoutes/AppRoutes";
+import { useEffect, useState } from "react";
+import jwt_decode from "jwt-decode";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
-import ErrorPage from "./Pages/ErrorPage/ErrorPage";
-import ProductDetails from "./Pages/ProductDetails/ProductDetails";
-import NavBar from "./Components/Navbar/NavBar";
-import Cart from "./Pages/Cart/Cart";
-import OrderCompleted from "./Pages/OrderCompleted/OrderCompleted";
-import UserDetailForm from "./Pages/UserDetailForm/UserDetailForm";
-import ConfirmedOrder from "./Pages/ConfirmedOrder/ConfirmedOrder";
-import Login from "./Pages/Registration/Login";
-import Signup from "./Pages/Registration/Signup";
 
 function App() {
+  // const [user, setUser] = useState({});
+
+  // const handleCallbackResponse = (response) => {
+  //   console.log(response.credential);
+  //   var userObject = jwt_decode(response.credential);
+  //   console.log(userObject);
+  //   setUser(userObject);
+  //   document.getElementById("SignInDiv").hidden = true;
+
+  //   localStorage.setItem("token", response.credential);
+  // };
+  // useEffect(() => {
+  //   /*global google*/
+  //   google.accounts.id.initialize({
+  //     client_id:
+  //       "651787101563-jr62bq2557su6569g5ujeceekt026hko.apps.googleusercontent.com",
+  //     callback: handleCallbackResponse,
+  //   });
+  //   google.accounts.id.renderButton(document.getElementById("SignInDiv"), {
+  //     theme: "outline",
+  //     size: "large",
+  //   });
+  // }, []);
+  // const handleSignout = (e) => {
+  //   setUser({});
+  //   document.getElementById("SignInDiv").hidden = false;
+  //   document.getElementById("img-div").hidden = true;
+  //   localStorage.clear();
+  // };
+
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<NavBar />}>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/products/:id?" element={<Products />} />
-          <Route path="/productDetails/:id?" element={<ProductDetails />} />
-          <Route path="/checkout" element={<Cart />}>
-            <Route path="order-completed" element={<OrderCompleted />} />
-            <Route path="user-details-form" element={<UserDetailForm />}>
-              <Route path="confirmed-order" element={<ConfirmedOrder />} />
-            </Route>
-          </Route>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      {/* <div id="SignInDiv"></div>
 
-          <Route path="/*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
+      {Object.keys(user).length !== 0 && (
+        <button
+          onClick={(e) => {
+            handleSignout(e);
+          }}
+        >
+          Sign Out
+        </button>
+      )}
+
+      {user && (
+        <div id="img-div">
+          <img src={user.picture}></img>
+          <h3>{user.name}</h3>
+        </div>
+      )} */}
+      <AppRoutes />
     </div>
   );
 }

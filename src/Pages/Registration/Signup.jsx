@@ -3,52 +3,61 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { signUp } from "../../utils/Services/firebase";
 
 const Signup = () => {
   const navigate = useNavigate();
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid Email Format").required("Required"),
-    firstname: Yup.string().required("Required"),
-    lastname: Yup.string(),
-    phone: Yup.string()
-      .matches(/^[0-9]{11}$/, "Invalid phone format")
-      .required("Phone is required"),
+    // firstname: Yup.string().required("Required"),
+    // lastname: Yup.string(),
+    // phone: Yup.string()
+    //   .matches(/^[0-9]{11}$/, "Invalid phone format")
+    //   .required("Phone is required"),
     password: Yup.string()
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])/,
         "Password must contain at least one upper-case letter and a number"
       )
       .required("Password is required"),
-    confirmpassword: Yup.string().oneOf(
-      [Yup.ref("password"), null],
-      "Passwords must match"
-    ),
+    // confirmpassword: Yup.string().oneOf(
+    //   [Yup.ref("password"), null],
+    //   "Passwords must match"
+    // ),
   });
 
   const initialValues = {
     email: "",
-    firstname: "",
-    lastname: "",
-    phone: "",
+    // firstname: "",
+    // lastname: "",
+    // phone: "",
     password: "",
-    confirmpassword: "",
+    // confirmpassword: "",
   };
 
   const onSubmit = (values) => {
-    if (
-      values.email !== "" &&
-      values.password !== "" &&
-      values.firstname !== "" &&
-      values.phone !== "" &&
-      values.password !== "" &&
-      values.confirmpassword !== ""
-    ) {
-      console.log("ss");
-      if (values.password === values.confirmpassword) {
-        navigate("/");
-      }
-    }
+    signUp(values, navigate);
+    navigate("/");
+    // if (
+    //   values.email !== "" &&
+    //   values.password !== "" &&
+    //   values.firstname !== "" &&
+    //   values.phone !== "" &&
+    //   values.password !== "" &&
+    //   values.confirmpassword !== ""
+    // ) {
+    //   console.log("ss");
+    //   if (values.password === values.confirmpassword) {
+    //     navigate("/");
+    //   }
+    // }
   };
+
+  //FIREBASE
+
+  //const auth = getAuth();
+
   return (
     <div>
       <div className="signup-container">
@@ -69,7 +78,7 @@ const Signup = () => {
               <ErrorMessage name="email" />
             </div>
 
-            <div className="formSignup">
+            {/* <div className="formSignup">
               <label className="labelSignup" htmlFor="firstname">
                 First Name
               </label>
@@ -91,7 +100,7 @@ const Signup = () => {
               </label>
               <Field type="text" id="phone" name="phone" />
               <ErrorMessage name="phone" />
-            </div>
+            </div> */}
 
             <div className="formSignup">
               <label className="labelSignup" htmlFor="password">
@@ -101,7 +110,7 @@ const Signup = () => {
               <ErrorMessage name="password" />
             </div>
 
-            <div className="formSignup">
+            {/* <div className="formSignup">
               <label className="labelSignup" htmlFor="confirmpassword">
                 Confirm Password
               </label>
@@ -111,7 +120,7 @@ const Signup = () => {
                 name="confirmpassword"
               />
               <ErrorMessage name="confirmpassword" />
-            </div>
+            </div> */}
 
             <div>
               <button className="buttonSignup" type="submit">

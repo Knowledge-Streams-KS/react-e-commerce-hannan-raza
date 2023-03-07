@@ -1,8 +1,7 @@
-import axios from "axios";
-import React from "react";
-import { useEffect, useState } from "react";
-import Card from "../../Components/Card/Card";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Card from "../../Components/Card/Card";
+import productService from "../../utils/Services/api";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -10,55 +9,52 @@ const Products = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    if (id) {
-      axios
-        .get(`https://fakestoreapi.com/products/category/${id}`)
-        .then((Response) => {
-          const resp = Response.data;
-          setProducts(resp);
-          setSearch(resp);
-        });
-    } else {
-      axios.get("https://fakestoreapi.com/products").then((Response) => {
-        const resp = Response.data;
-        setProducts(resp);
-        setSearch(resp);
-      });
-    }
-  }, []);
+    const fetchProducts = async () => {
+      try {
+        let response;
+        if (id) {
+          response = await productService.getProductsByCategory(id);
+        } else {
+          response = await productService.getAllProducts();
+        }
+        const data = response.data;
+        setProducts(data);
+        setSearch(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProducts();
+  }, [id]);
 
   const handleSearch = (event) => {
     const input = event.target.value;
-    const search = products.filter((param) => {
-      return param.title.toLowerCase().includes(input.toLowerCase());
+    const filteredProducts = products.filter((product) => {
+      return product.title.toLowerCase().includes(input.toLowerCase());
     });
-    setSearch(search);
+    setSearch(filteredProducts);
   };
 
   const handleMaxSort = () => {
-    let sortedProducts = [...products].sort((p1, p2) =>
-      p1.price > p2.price ? 1 : p1.price < p2.price ? -1 : 0
-    );
+    const sortedProducts = [...search].sort((a, b) => a.price - b.price);
     setSearch(sortedProducts);
   };
 
   const handleMinSort = () => {
-    let sortedProducts = [...products].sort((p1, p2) =>
-      p1.price < p2.price ? 1 : p1.price > p2.price ? -1 : 0
-    );
+    const sortedProducts = [...search].sort((a, b) => b.price - a.price);
     setSearch(sortedProducts);
   };
 
   const handleAlphabeticOrder = () => {
-    let sortedProducts = [...products].sort((p1, p2) =>
-      p1.title > p2.title ? 1 : p1.title < p2.title ? -1 : 0
+    const sortedProducts = [...search].sort((a, b) =>
+      a.title.localeCompare(b.title)
     );
     setSearch(sortedProducts);
   };
 
   const handleReverseOrder = () => {
-    let sortedProducts = [...products].sort((p1, p2) =>
-      p1.title < p2.title ? 1 : p1.title > p2.title ? -1 : 0
+    const sortedProducts = [...search].sort((a, b) =>
+      b.title.localeCompare(a.title)
     );
     setSearch(sortedProducts);
   };
@@ -77,18 +73,15 @@ const Products = () => {
       <div>
         <h1>HelloHellp</h1>
         <ul>
-          {search.map((param, index) => (
-            // <li key={products.id}>{products.title}{products.price}
-            // </li>
+          {search.map((product, index) => (
             <Card
               key={index}
-              id={param.id}
-              title={param.title}
-              price={param.price}
-              // description = {param.description}
-              category={param.category}
-              image={param.image}
-            ></Card>
+              id={product.id}
+              title={product.title}
+              price={product.price}
+              category={product.category}
+              image={product.image}
+            />
           ))}
         </ul>
       </div>

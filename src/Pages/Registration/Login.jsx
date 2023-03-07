@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Link } from "react-router-dom";
+import { Link, redirect, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import app from "../../firebase";
+import { signIn } from "../../utils/Services/firebase";
 
 const Login = () => {
+  const redirect = useLocation();
+  const location = redirect.state?.redirectedFrom.pathname;
+
   const navigate = useNavigate();
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid Email Format").required("Required"),
@@ -18,12 +28,24 @@ const Login = () => {
   };
 
   const onSubmit = (values) => {
-    if (values.email !== "" && values.password !== "") {
-      navigate("/home");
-    } else {
-      throw new ErrorMessage("Invalid username or password");
-    }
+    console.log(12);
+    // if (values.email !== "" && values.password !== "") {
+    //   navigate("/home");
+
+    signIn(values, navigate, location);
+    // navigate("/home");
+
+    //navigate("/home");
+    // } else {
+    //   throw new ErrorMessage("Invalid username or password");
+    // }
   };
+
+  //fireBae Auhentication
+
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+
   return (
     <div>
       <div className="login-container">
