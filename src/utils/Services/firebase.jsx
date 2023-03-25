@@ -18,7 +18,7 @@ export const signIn = (values, navigate, location) => {
 
       alert("Successfully Loged in");
       localStorage.setItem("token", user.accessToken);
-      location ? navigate(location) : navigate("/home");
+      location ? navigate(location) : navigate("/");
       window.location.reload();
 
       // navigate("/home");

@@ -7,7 +7,7 @@ import { REMOVE_FROM_CART } from "../../redux/cart/cartType";
 import { removeFromCart } from "../../redux/cart/cartAction";
 import { useState } from "react";
 import CartCounter from "../../Components/CartCounter/CartCounter";
-// import "./Cart.css";
+import "./Cart.css";
 import OrderCompleted from "../OrderCompleted/OrderCompleted";
 
 const Cart = (props) => {
@@ -45,24 +45,23 @@ const Cart = (props) => {
         <tbody>
           {storeData.products.map((product, index) => (
             <tr key={product.id}>
-              <td>{product.title}</td>
+              <td>{product.titles}</td>
               <td>
                 <img src={product.image} alt="" className="details" />
               </td>
               <td>{product.price}</td>
 
               <td>
+                <CartCounter count={product.counts} />
+              </td>
+              <td>
                 <button
                   onClick={() => {
-                    //  dispatch(removeFromCart(product));
                     RemFrmCart(product, index);
                   }}
                 >
                   REMOVE
                 </button>
-              </td>
-              <td>
-                <CartCounter count={product.counts} />
               </td>
             </tr>
           ))}
@@ -70,7 +69,6 @@ const Cart = (props) => {
       </table>
       <div>
         <Link to="order-completed">Order Completed</Link>
-        <Link to="user-details-form">User Detail Form</Link>
       </div>
       <Outlet />
     </div>

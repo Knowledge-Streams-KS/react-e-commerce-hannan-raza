@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Link, redirect, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import app from "../../firebase";
+
 import { signIn } from "../../utils/Services/firebase";
 
 const Login = () => {
@@ -28,28 +23,13 @@ const Login = () => {
   };
 
   const onSubmit = (values) => {
-    console.log(12);
-    // if (values.email !== "" && values.password !== "") {
-    //   navigate("/home");
-
     signIn(values, navigate, location);
-    // navigate("/home");
-
-    //navigate("/home");
-    // } else {
-    //   throw new ErrorMessage("Invalid username or password");
-    // }
   };
-
-  //fireBae Auhentication
-
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
 
   return (
     <div>
       <div className="login-container">
-        <h1>E-Commerce</h1>
+        <h1>Login</h1>
       </div>
 
       <Formik
