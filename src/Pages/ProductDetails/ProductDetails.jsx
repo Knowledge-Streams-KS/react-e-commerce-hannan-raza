@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 //import Counter from "../Counter/Counter";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart/cartAction";
+import "./ProductDetail.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const ProductDetails = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://fakestoreapi.com/products/${id}`
+          `http://localhost:5000/product/getProductDetails?ids=${id}`
         );
         const resp = response.data;
         setProductDetails(resp);

@@ -2,15 +2,15 @@ import axios from "axios";
 
 const productService = {
   getAllProducts: () => {
-    return axios.get("https://fakestoreapi.com/products");
+    return axios.get("http://localhost:5000/product/getProduct");
   },
   getProductsByCategory: (categoryId) => {
     return axios.get(
-      `https://fakestoreapi.com/products/category/${categoryId}`
+      `http://localhost:5000/product/getProductByCategory?category=${categoryId}`
     );
   },
   getAllCategories: () => {
-    return axios.get("https://fakestoreapi.com/products/categories");
+    return axios.get("http://localhost:5000/product/getCategory");
   },
 };
 

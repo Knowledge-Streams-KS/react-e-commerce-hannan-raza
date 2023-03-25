@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   return (
-    <div className="container1">
+    <div className="cardDiv">
       <div className="products">
-        <Link to={`/productDetails/${props.id}`}>{props.title}</Link>
+        <div className="headingText">
+          <Link to={`/productDetails/${props.id}`}>{props.title}</Link>
+        </div>
         <h1>${props.price}</h1>
-        <img src={props.image} alt="" />
+        <img className="image" src={props.image} alt="" />
       </div>
     </div>
   );

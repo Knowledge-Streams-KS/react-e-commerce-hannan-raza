@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   position: fixed;
   align-items: center;
   padding: 0px 20px;
@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1; /* increase the z-index to bring it to the front */
+  z-index: 2; /* increase the z-index to bring it to the front */
   /* other styles for the navbar */
 }
 
@@ -18,7 +18,7 @@
 }
 
 .links a {
-  color: aliceblue;
+  color: black;
   margin-left: 10px;
   text-decoration: none;
   font-size: 20px;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../../Components/Card/Card";
 import productService from "../../utils/Services/api";
+import "./Product.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -58,20 +59,26 @@ const Products = () => {
     );
     setSearch(sortedProducts);
   };
-
+  console.log(search);
   return (
     <div>
-      <div>
-        <button onClick={handleMaxSort}>MIN To MAX</button>
-        <button onClick={handleMinSort}>MAX To MIN</button>
-        <button onClick={handleAlphabeticOrder}>ALPHABETICS</button>
-        <button onClick={handleReverseOrder}>ReverseALPHABETICS</button>
+      <div class="parent-container">
+        <div class="dropdown-container">
+          <button class="dropdown-toggle">Quick Search</button>
+          <div class="dropdown-menu">
+            <button onClick={handleMaxSort}>MIN To MAX</button>
+            <button onClick={handleMinSort}>MAX To MIN</button>
+            <button onClick={handleAlphabeticOrder}>ALPHABETICS</button>
+            <button onClick={handleReverseOrder}>ReverseALPHABETICS</button>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <input placeholder="Search" onChange={handleSearch}></input>
+        </div>
       </div>
+
       <div>
-        <input placeholder="Search" onChange={handleSearch}></input>
-      </div>
-      <div>
-        <h1>HelloHellp</h1>
         <ul>
           {search.map((product, index) => (
             <Card

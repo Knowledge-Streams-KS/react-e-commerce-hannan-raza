@@ -7,12 +7,10 @@ import "./Categories.css";
 const Categories = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products/categories")
-      .then((Response) => {
-        const resp = Response.data;
-        setCategory(resp);
-      });
+    axios.get("http://localhost:5000/product/getCategory").then((Response) => {
+      const resp = Response.data;
+      setCategory(resp);
+    });
   }, []);
 
   return (

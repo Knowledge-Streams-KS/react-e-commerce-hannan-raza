@@ -1,5 +1,8 @@
+body {
+  /* background-color: whitesmoke; */
+}
 .container {
-  background-image: url("./1.jpg");
+  /* background-image: url("./1.jpg"); */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -23,4 +26,161 @@
 
 .buttonHome:hover {
   background-color: blue;
+}
+
+.homeImage img {
+  /* background-color: yellowgreen; */
+  width: 50vw;
+  height: 100vh;
+}
+.homeImage {
+  display: flex;
+}
+
+.womenImage {
+  cursor: pointer;
+  background-color: #f4f4f4;
+}
+.womenImage:hover {
+  background-color: #f4f4f4;
+}
+
+.womenImageWrapper,
+.menImageWrapper {
+  overflow: hidden;
+}
+
+.womenImageWrapper:hover .womenImage {
+  transform: scale(1.03);
+}
+
+.menImageWrapper:hover .menImage {
+  transform: scale(1.03);
+}
+.menImage {
+  cursor: pointer;
+  background-color: #ece7e3;
+}
+
+.homeImage {
+  position: relative;
+}
+
+.womenText {
+  position: absolute;
+  top: 1%;
+  left: 8%;
+  transform: translate(-20%, -20%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.menText {
+  position: absolute;
+  top: 1%;
+  left: 56%;
+  transform: translate(-20%, -20%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.womenText h2 {
+  font-size: 100px;
+  position: absolute;
+  top: 80%;
+  left: 320%;
+  transform: translate(-20%, -20%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.menText h2 {
+  font-size: 100px;
+  position: absolute;
+  top: 80%;
+  left: -10%;
+  transform: translate(-20%, -20%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.womenImage {
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.menImage {
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.categoriesSlider {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.categoriesCard {
+  display: flex;
+  padding: 10px 5px;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  border: 0 solid #f9f9f9;
+  border-radius: 10px;
+}
+
+.categoriesCard img {
+  height: 80px;
+  border-radius: 50%;
+  width: auto;
+}
+.categoriesCard h1 {
+  font-size: 1rem;
+}
+.categoriesCard p {
+  font-size: 1rem;
+}
+
+.itemcard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.1px;
+  width: auto;
+  padding: 0px 10px 0px 80px;
+}
+
+.itemcard > * {
+  margin: -10;
+}
+
+.itemcard .card {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 20px;
+  margin: 100px;
+}
+
+.itemcard .card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.itemcard .card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.headingText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis; /* display ... at the end */
+  white-space: nowrap; /* prevent the text from wrapping */
+  text-decoration: none;
 }
