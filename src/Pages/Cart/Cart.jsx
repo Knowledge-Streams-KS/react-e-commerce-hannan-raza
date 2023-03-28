@@ -70,6 +70,9 @@ const Cart = (props) => {
       <div>
         <Link to="order-completed">Order Completed</Link>
       </div>
+      <div>
+        <Link to="users-detail-form">User Deatil Form</Link>
+      </div>
       <Outlet />
     </div>
   );

@@ -60,12 +60,12 @@
 .parent-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Add this line to center horizontally */
+  justify-content: center;
 }
 
 .search-container {
   margin-right: 20px;
-  width: 100%; /* Add this line to make the search container take up the full width of the parent container */
+  width: 100%;
   max-width: 300px;
 }
 
@@ -77,5 +77,5 @@
   font-size: 16px;
   color: #57606f;
   font-weight: bold;
-  text-align: center; /* Add this line to center the text within the search input */
+  text-align: center;
 }
