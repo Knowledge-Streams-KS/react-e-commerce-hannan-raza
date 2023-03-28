@@ -6,7 +6,7 @@ This project is an e-commerce web application built using React. The main purpos
 
 To install and run the project locally, follow these steps:
 
-Clone the repository: git clone git@github.com:Knowledge-Streams-KS/react-e-commerce-hannan-raza.git
+Clone the repository: git clone git@github.com:Knowledge-Streams-KS/react-e-commerce-hannan-raza.git 
 Install dependencies: npm install
 Start the development server: npm start
 
