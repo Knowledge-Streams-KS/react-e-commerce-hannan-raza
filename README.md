@@ -1,4 +1,5 @@
-## E-Commerce Backend
+## React E-Commerce
+
 This project is an e-commerce web application built using React. The main purpose of the project is to provide an online platform for users to buy products.
 
 # Installation
@@ -12,16 +13,16 @@ Start the development server: npm start
 # Usage
 Once the development server is running, you can access the application in your browser at http://localhost:3000. The application allows users to:
 
-Browse products
-Add products to cart
-Checkout and place an order
+- Browse products
+- Add products to cart
+- Checkout and place an order
 
 # Features
 Some of the key features of this e-commerce project are:
 
-Browse products and Add products to cart
-Integration with a backend API for retrieving product information
-User authentication and authorization.
+- Browse products and Add products to cart
+- Integration with a backend API for retrieving product information
+- User authentication and authorization.
 
 # Contributing
 Contributions are welcome! If you would like to contribute to the project, please follow these steps:
