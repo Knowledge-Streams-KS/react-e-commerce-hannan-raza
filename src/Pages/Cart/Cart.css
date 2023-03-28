@@ -1,4 +1,4 @@
-Cart page styles .cart-container {
+.cart-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -31,6 +31,8 @@ tbody td {
 img.details {
   width: 100px;
   height: 100px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .remove-button {
@@ -45,6 +47,7 @@ img.details {
 .cart-actions {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -60,4 +63,24 @@ img.details {
 
 .cart-actions a:hover {
   background-color: #0062cc;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+  margin-right: 200px;
+}
+
+.remove-button-col {
+  text-align: center;
+}
+
+.quantity-col {
+  text-align: center;
 }

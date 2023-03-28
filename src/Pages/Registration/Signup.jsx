@@ -54,10 +54,6 @@ const Signup = () => {
     // }
   };
 
-  //FIREBASE
-
-  //const auth = getAuth();
-
   return (
     <div>
       <div className="signup-container">
@@ -78,30 +74,6 @@ const Signup = () => {
               <ErrorMessage name="email" />
             </div>
 
-            {/* <div className="formSignup">
-              <label className="labelSignup" htmlFor="firstname">
-                First Name
-              </label>
-              <Field type="text" id="firstname" name="firstname" />
-              <ErrorMessage name="firstname" />
-            </div>
-
-            <div className="formSignup">
-              <label className="labelSignup" htmlFor="lastname">
-                Last Name
-              </label>
-              <Field type="text" id="lastname" name="lastname" />
-              <ErrorMessage name="lastname" />
-            </div>
-
-            <div className="formSignup">
-              <label className="labelSignup" htmlFor="phone">
-                Phone
-              </label>
-              <Field type="text" id="phone" name="phone" />
-              <ErrorMessage name="phone" />
-            </div> */}
-
             <div className="formSignup">
               <label className="labelSignup" htmlFor="password">
                 Password
@@ -109,18 +81,6 @@ const Signup = () => {
               <Field type="password" id="password" name="password" />
               <ErrorMessage name="password" />
             </div>
-
-            {/* <div className="formSignup">
-              <label className="labelSignup" htmlFor="confirmpassword">
-                Confirm Password
-              </label>
-              <Field
-                type="password"
-                id="confirmpassword"
-                name="confirmpassword"
-              />
-              <ErrorMessage name="confirmpassword" />
-            </div> */}
 
             <div>
               <button className="buttonSignup" type="submit">

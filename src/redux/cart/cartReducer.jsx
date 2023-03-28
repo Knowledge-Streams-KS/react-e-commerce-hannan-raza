@@ -14,8 +14,6 @@ const ShoppinReducer = (state = initialState, action) => {
         return {
           ...state,
           products: [...state.products, action.payload.product],
-
-          // quantity: [...state.quantity, action.payload.quantity],
         };
       } else {
         const updatedProducts = [...state.products];
@@ -28,13 +26,13 @@ const ShoppinReducer = (state = initialState, action) => {
       }
     case REMOVE_FROM_CART:
       console.log(123432);
-      let newArr=[...state.products];
+      let newArr = [...state.products];
       // const newProducts = state.products.filter(
       //   product => product.id !== action.payload.product.id
       // );
-      newArr.splice(action.payload.index,1);
+      newArr.splice(action.payload.index, 1);
       return {
-       ...state,
+        ...state,
         products: newArr,
       };
     default:

@@ -52,20 +52,25 @@ const ProductDetails = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className="product-details">
       <h1>Product Details</h1>
-      {productDetails.title}
-      <br></br>${productDetails.price}
-      <br></br>
-      {productDetails.category}
-      <br></br>
-      {productDetails.description}
-      <br></br>
-      <img src={productDetails.image} />
-      <button onClick={handleIncrement}>+</button>
-      {counts}
-      <button onClick={handleDecrement}>-</button>
-      <button onClick={handleCart}>Add to Cart</button>
+      <div className="product-title">{productDetails.title}</div>
+
+      <div className="product-price">${productDetails.price}</div>
+
+      <div className="product-category ">{productDetails.category}</div>
+      <div>{productDetails.description}</div>
+
+      <div className="product-image">
+        <img src={productDetails.image} alt="" />
+      </div>
+
+      <div className="product-quantity">
+        <button onClick={handleIncrement}>+</button>
+        {counts}
+        <button onClick={handleDecrement}>-</button>
+        <button onClick={handleCart}>Add to Cart</button>
+      </div>
     </div>
   );
 };

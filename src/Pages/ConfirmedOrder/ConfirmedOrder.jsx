@@ -1,16 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Store } from "redux";
 import React from "react";
-
+import { Link } from "react-router-dom";
+import "./ConfirmedOrder.css";
 const ConfirmedOrder = () => {
   const storeData = useSelector((state) => state);
   console.log("store Data :", storeData);
   return (
-    <div>
-      <h1>Confirmed Order</h1>
-      <h1>Confirmed Order</h1>
-      <h1>Confirmed Order</h1>
-      <h1>Confirmed Order</h1>
+    <div className="orderCompleted">
+      <h1>Your Order has Been Confirmed</h1>
+      <div className="button">
+        <Link to="/">Home</Link>
+      </div>
     </div>
   );
 };

@@ -86,9 +86,6 @@ const UserDetailForm = () => {
 
         <button type="submit">Continue to Shopping</button>
       </Form>
-      {/* <h1>UserDetailForm</h1>
-      <Link to="confirmed-order">Confirm Order</Link>
-      <Outlet /> */}
     </Formik>
   );
 };
